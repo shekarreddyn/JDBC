@@ -9,14 +9,14 @@ public class PreparedUpdateStatement {
 
         Connection con = null;
 
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
 
-            con= DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/world","root","P@ssw0rd@123");
+            con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/world", "root", "P@ssw0rd@123");
 
-            String updateQuery = "UPDATE employee SET salary = ? where role = ? and salary = ?";
+            String updateQuery = "UPDATE employee SET salary = ? where department = ? and salary = ?";
 
             PreparedStatement preparedStatement = con.prepareStatement(updateQuery);
 
@@ -24,31 +24,32 @@ public class PreparedUpdateStatement {
             preparedStatement.setString(2, "Admin");
             preparedStatement.setDouble(3, 1500);
 
-             preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
 
-             String selectQuery =  "Select * from Employee where salary = '1500' and where role ='Admin'";
-             PreparedStatement prepareStatement = con.prepareStatement(selectQuery);
+            String selectQuery = "Select * from employee where department = ? and salary = ? ";
+            preparedStatement = con.prepareStatement(selectQuery);
+            preparedStatement.setString(1, "Admin");
+            preparedStatement.setDouble(2, 2000);
 
             ResultSet rs = preparedStatement.executeQuery();
 
-            while(rs.next())
-            {
+            while (rs.next()) {
 
-                System.out.print(rs.getInt("id") +" " );
-                System.out.print(rs.getString("name") +" " );
-                System.out.print(rs.getDouble("salary") +" " );
-                System.out.print(rs.getString("department") +" " );
+                System.out.print(rs.getInt("id") + " ");
+                System.out.print(rs.getString("name") + " ");
+                System.out.print(rs.getDouble("salary") + " ");
+                System.out.print(rs.getString("department") + " ");
                 System.out.println();
 
             }
 
-        } catch(Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
 
         } finally {
 
-            if(null != con){
+            if (null != con) {
 
                 con.close();
             }
