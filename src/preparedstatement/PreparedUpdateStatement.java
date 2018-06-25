@@ -16,15 +16,19 @@ public class PreparedUpdateStatement {
             con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/world", "root", "P@ssw0rd@123");
 
+
             String updateQuery = "UPDATE employee SET salary = ? where department = ? and salary = ?";
 
             PreparedStatement preparedStatement = con.prepareStatement(updateQuery);
 
             preparedStatement.setDouble(1, 2000);
             preparedStatement.setString(2, "Admin");
-            preparedStatement.setDouble(3, 1500);
+            preparedStatement.setDouble(3, 1600
+
+            );
 
             preparedStatement.executeUpdate();
+
 
             String selectQuery = "Select * from employee where department = ? and salary = ? ";
             preparedStatement = con.prepareStatement(selectQuery);
