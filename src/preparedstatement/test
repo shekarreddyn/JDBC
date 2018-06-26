@@ -1,0 +1,28 @@
+Map<String, List<String>>
+
+key : departmentName
+value : list of names working in that department
+
+while(rs){
+
+    key = rs.getString(department);
+
+    value =  rs.getString(name);
+
+    if(key present in map){
+
+        get the existing list from map
+        put new value to list
+        put key, value(list) again :  map.put(key, value);
+    } else {
+
+        create list
+        add name
+        put key, value(new created list) in map : map.put(key, value);
+    }
+}
+
+Map : key          Value
+        Admin       A,B,C,D
+        IT          A,D,e
+
