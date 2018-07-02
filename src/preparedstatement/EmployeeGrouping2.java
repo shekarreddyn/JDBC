@@ -67,8 +67,27 @@ public class EmployeeGrouping2 {
                 }
             }
 
-            Set<Map.Entry<String, List<String>>> entry = resultMap.entrySet();
+       /* for(TypeOfObj objName : collection) */
 
+
+            Set<Map.Entry<String, List<String>>> entrySet = resultMap.entrySet();
+
+            for (Map.Entry<String, List<String>> employeeEntry : entrySet) {
+
+                 System.out.println(employeeEntry.getKey());
+
+
+                List<String> valueList1 = employeeEntry.getValue();
+
+                for (String employeeValue : valueList1) {
+
+
+                    System.out.print(employeeValue);
+
+
+                }
+
+            }
 
             // IT : A,B,C, D
             // Admin : E,F,G
