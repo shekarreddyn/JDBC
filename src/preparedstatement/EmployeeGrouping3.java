@@ -30,17 +30,48 @@ public class EmployeeGrouping3 {
             PreparedStatement preparedStatement = con.prepareStatement(selectQuery);
 
 
-            preparedStatement.executeUpdate();
+           ResultSet rs = preparedStatement.executeQuery();
+
+            Map<String, List<String>> employeeMap = new HashMap();
 
 
-            String selectQuery = "Select * from employee where department = ? and salary = ? ";
-            preparedStatement = con.prepareStatement(selectQuery);
-            preparedStatement.setString(1, "Admin");
-            preparedStatement.setDouble(2, 2000);
+            while (rs.next()) {
+                String key = rs.getString("department");
+                String value = rs.getString("name");
 
-            ResultSet rs = preparedStatement.executeQuery();
+                if (employeeMap.keySet().contains(key)) {
 
+                    // existing entry
+                    List<String> existingList = employeeMap.get(key);
+                    existingList.add(value);
+                    employeeMap.put(key, existingList);
 
+                } else {
+
+                    // new entry
+
+                    List<String> employeeList = new ArrayList<>();
+
+                    employeeList.add(value);
+
+                    employeeMap.put(key, employeeList);
+                }
+
+            }
+                  Set<Map.Entry<String, List<String>>> entrySet = employeeMap.entrySet();
+
+            for (Map.Entry<String, List<String>> entry : entrySet) {
+
+              String Keydepartment =    entry.getKey();
+                System.out.println(Keydepartment);
+               List<String> Valuenames =  entry.getValue();
+
+               for(String value:Valuenames){
+
+                   System.out.print(value);
+               }
+                System.out.println();
+            }
 
         } catch (Exception e) {
 

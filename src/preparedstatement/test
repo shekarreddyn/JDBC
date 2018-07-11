@@ -3,17 +3,29 @@ Map<String, List<String>>
 key : departmentName
 value : list of names working in that department
 
+Admin : tilak , shekar, sunil
+IT :Satyam
+HR :HG
+
+1. Admin Tilak
+2. Admin Shekar
+3. IT Satyam
+4. HR HOTGIRL
+5. Admin Sunil
+
 while(rs){
 
     key = rs.getString(department);
 
     value =  rs.getString(name);
 
-    if(key present in map){
+    if(key present in map){  //map.keySet().contains(key)
 
         get the existing list from map
         put new value to list
         put key, value(list) again :  map.put(key, value);
+
+
     } else {
 
         create list
