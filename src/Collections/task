@@ -1,0 +1,26 @@
+1. Create a map that stores State as a key and list of cities as a value. loop through it using keySet and entrySet.
+
+Gujarat <Ahm, Surat>
+
+Map<String, List<String>>
+
+
+2. Create a map which stores person name as a key and his unique telephone numbers as a value.
+
+"Shakar" <123456, 2515245>
+
+Map<String, Set<Integer>>
+
+Map
+
+map.put(string, set)
+
+key       value
+Shekar    Set:
+            123456
+            767676
+
+Satyam    Set:
+             254848
+             458585
+
