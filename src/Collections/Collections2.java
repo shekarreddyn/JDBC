@@ -1,5 +1,7 @@
 package Collections;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.*;
 import java.util.HashMap;
 
@@ -29,6 +31,13 @@ public class Collections2 {
         map.put("Mumbai", mumbaiList);
         map.put("Andhra Pradesh", andhraList);
 
+        Set<Map.Entry<String, List<String>>> entryMap = map.entrySet();
 
+
+                for(Map.Entry<String, List<String>> entry :entryMap){
+
+                    System.out.println(entry.getKey());
+                    System.out.println(entry.getValue());
+        }
     }
 }
