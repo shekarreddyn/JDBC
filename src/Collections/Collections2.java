@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Collections2 {
 
-    public static  void main(String[] args){
+    public static void main(String[] args) {
 
         Map<String, List<String>> map = new HashMap<String, List<String>>();
 
@@ -34,10 +34,16 @@ public class Collections2 {
         Set<Map.Entry<String, List<String>>> entryMap = map.entrySet();
 
 
-                for(Map.Entry<String, List<String>> entry :entryMap){
+        for (Map.Entry<String, List<String>> entry : entryMap) {
 
-                    System.out.println(entry.getKey());
-                    System.out.println(entry.getValue());
+            System.out.println();
+            System.out.print(entry.getKey() + " : ");
+
+            List<String> cityNames = entry.getValue();
+
+            for (String cityName : cityNames) {
+                System.out.print(cityName + " " );
+            }
         }
     }
 }

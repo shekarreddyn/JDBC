@@ -1,26 +1,45 @@
-1. Create a map that stores State as a key and list of cities as a value. loop through it using keySet and entrySet.
-
-Gujarat <Ahm, Surat>
-
-Map<String, List<String>>
+1. Telecom Provider
 
 
-2. Create a map which stores person name as a key and his unique telephone numbers as a value.
+Location 1:
 
-"Shakar" <123456, 2515245>
+Shekar : 123456, 958565
 
-Map<String, Set<Integer>>
 
-Map
 
-map.put(string, set)
+Location 2:
 
-key       value
-Shekar    Set:
-            123456
-            767676
+Satyam : 958565, 85858
 
-Satyam    Set:
-             254848
-             458585
 
+
+Location 3:
+
+Cop : 85858, 123456
+
+
+Shekar : 123456
+Satyam : 958565
+Cop : 85858
+
+
+
+Map<String, List<Integer>>    : Map<String, List<Integer>>
+
+Add everything
+
+Traverse it
+
+Create new list for every person  List<Integer>
+
+try adding to unique numbers set
+
+if(set contains number){
+
+    dont add to person list
+} else {
+    add to set
+    add to person list
+}
+
+Goal : new Map<String, List<Integer>>
